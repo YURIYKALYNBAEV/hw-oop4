@@ -25,7 +25,7 @@ public class Bus extends Transport <DriverD>{
 
     @Override
     public void BestLapTime() {
-        int minBound = 100;
+        int minBound = 90;
         int maxBound = 150;
         int bestLapTime = (int) ((int) (maxBound - minBound) * Math.random());
         System.out.println("Лучшее время круга для автобуса в минутах" + bestLapTime);
@@ -33,7 +33,7 @@ public class Bus extends Transport <DriverD>{
 
     @Override
     public void MaximumSpeed() {
-        int minBound = 80;
+        int minBound = 70;
         int maxBound = 120;
         int maximumSpeed = (int) ((int) (maxBound - minBound) * Math.random());
         System.out.println("Максимальная скорость для автобуса" + maximumSpeed);
