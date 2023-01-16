@@ -1,11 +1,22 @@
 package transport;
 
 public class Bus extends Transport <DriverD>{
+    public BusTypeOfSeats busTypeOfSeats;
     public Bus(String brand,
                String model,
                double engineVolume,
-               DriverD driver) {
+               DriverD driver,
+               BusTypeOfSeats busTypeOfSeats) {
         super(brand, model, engineVolume, driver);
+        setBusTypeOfSeats(busTypeOfSeats);
+    }
+
+    public BusTypeOfSeats getBusTypeOfSeats() {
+        return busTypeOfSeats;
+    }
+
+    public void setBusTypeOfSeats(BusTypeOfSeats busTypeOfSeats) {
+        this.busTypeOfSeats = busTypeOfSeats;
     }
 
     @Override
@@ -37,5 +48,17 @@ public class Bus extends Transport <DriverD>{
         int maxBound = 120;
         int maximumSpeed = (int) ((int) (maxBound - minBound) * Math.random());
         System.out.println("Максимальная скорость для автобуса" + maximumSpeed);
+    }
+
+    @Override
+    public void printType(Transport<?> transport) {
+        if (busTypeOfSeats == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("busTypeOfSeats = " + busTypeOfSeats);
+        }
+
+
+
     }
 }

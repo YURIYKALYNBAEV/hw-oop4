@@ -1,13 +1,12 @@
 package transport;
 
-public abstract class Transport <T extends Driver> implements Competing{
+public abstract class Transport<T extends Driver> implements Competing {
     public static final String DEFAULT_VALUE = "default";
     private static final double DEFAULT_ENGINE_VOLUME = 1.5;
     private final String brand;
     private final String model;
     private double engineVolume;
     private T driver;
-
 
     public Transport(String brand,
                      String model,
@@ -67,4 +66,6 @@ public abstract class Transport <T extends Driver> implements Competing{
     public abstract void startMoving();
 
     public abstract void finishMoving();
+
+    public abstract void printType(Transport<?> transport);
 }
