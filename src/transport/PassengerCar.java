@@ -2,7 +2,7 @@ package transport;
 
 
 public class PassengerCar extends Transport<DriverB>{
-    public CarBodyType carBodyType;
+    private CarBodyType carBodyType;
 
     public PassengerCar(String brand,
                         String model,

@@ -1,7 +1,7 @@
 package transport;
 
 public class Truck extends Transport<DriverC>{
-    public TruckTypeLoadCapacity truckTypeLoadCapacity;
+    private TruckTypeLoadCapacity truckTypeLoadCapacity;
     public Truck(String brand,
                  String model,
                  double engineVolume,

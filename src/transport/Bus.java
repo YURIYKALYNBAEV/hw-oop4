@@ -1,7 +1,7 @@
 package transport;
 
 public class Bus extends Transport <DriverD>{
-    public BusTypeOfSeats busTypeOfSeats;
+    private BusTypeOfSeats busTypeOfSeats;
     public Bus(String brand,
                String model,
                double engineVolume,
