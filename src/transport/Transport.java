@@ -68,4 +68,8 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void finishMoving();
 
     public abstract void printType(Transport<?> transport);
+
+    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
+        System.out.println("Проверка прохождения диагностики");
+    }
 }

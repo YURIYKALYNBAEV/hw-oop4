@@ -50,7 +50,18 @@ public class Main {
         printTruckTypeLoadCapacity();
         printBusTypeOfSeats();
 
-
+        PassengerCar kia = new PassengerCar("kia",
+                "ceed",
+                1.6,
+                new DriverB("Petrov", false, 10),
+                CarBodyType.BODY_TYPE3);
+        checkDriverLicense(kia);
+        Truck kamaz = new Truck("KAMAZ",
+                "5311",
+                3.3,
+                new DriverC("Ivanov", true, 15),
+                TruckTypeLoadCapacity.CAPACITY_TYPE3);
+        checkDriverLicense(kamaz);
     }
 
     public static void print(Transport<?> transport) {
@@ -63,16 +74,28 @@ public class Main {
             System.out.println(carType);
         }
     }
+
     public static void printTruckTypeLoadCapacity() {
         for (TruckTypeLoadCapacity truckType : TruckTypeLoadCapacity.values()) {
             System.out.println(truckType);
         }
     }
+
     public static void printBusTypeOfSeats() {
         for (BusTypeOfSeats busType : BusTypeOfSeats.values()) {
             System.out.println(busType);
         }
     }
 
-
+    public static void checkDriverLicense(Transport<?> transport) {
+        try {
+            transport.passDiagnostics(transport);
+        } catch (MissingDriverLicenseException e) {
+            System.out.println("Ошибка - у водителя " +
+                    transport.getDriver().getName() + " нет прав");
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Выполняюсь всегда");
+        }
+    }
 }

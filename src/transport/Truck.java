@@ -1,7 +1,8 @@
 package transport;
 
-public class Truck extends Transport<DriverC>{
+public class Truck extends Transport<DriverC> {
     private TruckTypeLoadCapacity truckTypeLoadCapacity;
+
     public Truck(String brand,
                  String model,
                  double engineVolume,
@@ -28,10 +29,12 @@ public class Truck extends Transport<DriverC>{
     public void finishMoving() {
         System.out.println("Грузовик марки" + getBrand() + "закончил движение");
     }
+
     @Override
     public void PitStop() {
         System.out.println("Пит-стоп у грузовика");
     }
+
     @Override
     public void BestLapTime() {
         int minBound = 90;
@@ -54,6 +57,18 @@ public class Truck extends Transport<DriverC>{
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
             System.out.println("truckTypeLoadCapacity = " + truckTypeLoadCapacity);
+        }
+    }
+
+    @Override
+    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
+        if (getDriver().isHasDriverLicense()) {
+            System.out.println(getBrand() + " " +
+                    getModel() + " " +
+                    getDriver().getName() +
+                    " может пройти диагностику");
+        } else {
+            throw new MissingDriverLicenseException("Необходимо указать тип прав!");
         }
     }
 }

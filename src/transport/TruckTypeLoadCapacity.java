@@ -2,8 +2,8 @@ package transport;
 
 public enum TruckTypeLoadCapacity {
     CAPACITY_TYPE1(0, 3.5f),
-    CAPACITY_TYPE2(3.5f,12),
-    CAPACITY_TYPE3(12,0);
+    CAPACITY_TYPE2(3.5f, 12),
+    CAPACITY_TYPE3(12, 0);
 
     private float minBound;
     private float maxBound;
@@ -32,16 +32,16 @@ public enum TruckTypeLoadCapacity {
     @Override
     public String toString() {
         String result = null;
-        if (minBound == 0 && maxBound != 0) {
-            result =  "Грузоподъемность: до " +
-                    maxBound + " тонн";
-        } else if (minBound != 0 && maxBound != 0) {
-            result =   "Грузоподъемность: от " +
-                    minBound + " тонн до " +
-                    maxBound + " тонн";
-        } else if (minBound != 0 && maxBound == 0) {
-            result =   "Грузоподъемность: свыше " +
-                    minBound + " тонн";
+        if (getMinBound() == 0 && getMaxBound() != 0) {
+            result = "Грузоподъемность: до " +
+                    getMaxBound() + " тонн";
+        } else if (getMinBound() != 0 && getMaxBound() != 0) {
+            result = "Грузоподъемность: от " +
+                    getMinBound() + " тонн до " +
+                    getMaxBound() + " тонн";
+        } else if (getMinBound() != 0 && getMaxBound() == 0) {
+            result = "Грузоподъемность: свыше " +
+                    getMinBound() + " тонн";
         }
         return result;
     }

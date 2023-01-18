@@ -1,7 +1,7 @@
 package transport;
 
 
-public class PassengerCar extends Transport<DriverB>{
+public class PassengerCar extends Transport<DriverB> {
     private CarBodyType carBodyType;
 
     public PassengerCar(String brand,
@@ -30,10 +30,12 @@ public class PassengerCar extends Transport<DriverB>{
     public void finishMoving() {
         System.out.println("Легковушка марки" + getBrand() + "закончила движение");
     }
+
     @Override
     public void PitStop() {
         System.out.println("Пит-стоп у легковушки");
     }
+
     @Override
     public void BestLapTime() {
         int minBound = 70;
@@ -57,6 +59,19 @@ public class PassengerCar extends Transport<DriverB>{
         } else {
             System.out.println("carBodyType = " + carBodyType);
         }
-
     }
+
+    @Override
+    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
+        if (getDriver().isHasDriverLicense()) {
+            System.out.println(getBrand() + " " +
+                    getModel() + " " +
+                    getDriver().getName() +
+                    " может пройти диагностику");
+        } else {
+            throw new MissingDriverLicenseException("Необходимо указать тип прав!");
+        }
+    }
+
+
 }

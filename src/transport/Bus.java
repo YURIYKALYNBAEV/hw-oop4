@@ -1,7 +1,8 @@
 package transport;
 
-public class Bus extends Transport <DriverD>{
+public class Bus extends Transport<DriverD> {
     private BusTypeOfSeats busTypeOfSeats;
+
     public Bus(String brand,
                String model,
                double engineVolume,
@@ -57,7 +58,6 @@ public class Bus extends Transport <DriverD>{
         } else {
             System.out.println("busTypeOfSeats = " + busTypeOfSeats);
         }
-
 
 
     }

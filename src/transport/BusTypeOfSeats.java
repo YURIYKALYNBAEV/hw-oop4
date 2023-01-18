@@ -63,12 +63,12 @@ public enum BusTypeOfSeats {
     @Override
     public String toString() {
         String result = null;
-        if (minBound == 0 && maxBound != 0) {
+        if (getMinBound() == 0 && getMaxBound() != 0) {
             result = "Вместимость: до " +
-                    maxBound + " мест";
-        } else if (minBound != 0 && maxBound != 0) {
-            result = "Вместимость: " + minBound +
-                    "-" + maxBound + " мест";
+                    getMaxBound() + " мест";
+        } else if (getMinBound() != 0 && getMaxBound() != 0) {
+            result = "Вместимость: " + getMinBound() +
+                    "-" + getMaxBound() + " мест";
         }
         return result;
     }
