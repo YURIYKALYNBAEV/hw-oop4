@@ -2,14 +2,15 @@ package transport;
 
 
 public class PassengerCar extends Transport<DriverB> {
-    private CarBodyType carBodyType;
+    public CarBodyType carBodyType;
 
     public PassengerCar(String brand,
                         String model,
                         double engineVolume,
                         DriverB driver,
-                        CarBodyType carBodyType) {
-        super(brand, model, engineVolume, driver);
+                        CarBodyType carBodyType,
+                        CarMechanic mechanic) {
+        super(brand, model, engineVolume, driver, mechanic);
         setCarBodyType(carBodyType);
     }
 
@@ -59,6 +60,7 @@ public class PassengerCar extends Transport<DriverB> {
         } else {
             System.out.println("carBodyType = " + carBodyType);
         }
+
     }
 
     @Override

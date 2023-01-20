@@ -7,11 +7,13 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String model;
     private double engineVolume;
     private T driver;
+    public CarMechanic mechanic;
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver) {
+                     T driver,
+                     CarMechanic mechanic) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = DEFAULT_VALUE;
         } else {
@@ -24,6 +26,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         }
         setEngineVolume(engineVolume);
         setDriver(driver);
+        setMechanic(mechanic);
     }
 
     public String getBrand() {
@@ -54,6 +57,14 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
     }
 
+    public CarMechanic getMechanic() {
+        return mechanic;
+    }
+
+    public void setMechanic(CarMechanic mechanic) {
+        this.mechanic = mechanic;
+    }
+
     @Override
     public String toString() {
         return "Transport{" +
@@ -69,7 +80,7 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract void printType(Transport<?> transport);
 
-    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
+    public  void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
         System.out.println("Проверка прохождения диагностики");
     }
 }
