@@ -13,8 +13,7 @@ import transport.mechanic.TypeTransport;
 import transport.truck.Truck;
 import transport.truck.TruckTypeLoadCapacity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -94,6 +93,20 @@ public class Main {
 
         for (Transport<?> transport : carsList) {
             System.out.println(transport + " " + transport.getMechanics());
+        }
+
+        //
+        Map<Transport<?>, Mechanic> transportMechanicMap = new HashMap<>();
+
+        for (Transport<?> transport : carsList) {
+            Set<Mechanic> mechanics = transport.getMechanics();
+            for (Mechanic mechanic : mechanics) {
+                transportMechanicMap.put(transport, mechanic);
+            }
+        }
+        System.out.println();
+        for (Map.Entry<Transport<?>, Mechanic> entry : transportMechanicMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
     }
 
