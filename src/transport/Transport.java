@@ -1,5 +1,12 @@
 package transport;
 
+import transport.driver.Driver;
+import transport.exception.MissingDriverLicenseException;
+import transport.mechanic.Mechanic;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport<T extends Driver> implements Competing {
     public static final String DEFAULT_VALUE = "default";
     private static final double DEFAULT_ENGINE_VOLUME = 1.5;
@@ -7,13 +14,12 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String model;
     private double engineVolume;
     private T driver;
-    public CarMechanic mechanic;
+    private final List<Mechanic> mechanics = new ArrayList<>();
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver,
-                     CarMechanic mechanic) {
+                     T driver) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = DEFAULT_VALUE;
         } else {
@@ -26,7 +32,6 @@ public abstract class Transport<T extends Driver> implements Competing {
         }
         setEngineVolume(engineVolume);
         setDriver(driver);
-        setMechanic(mechanic);
     }
 
     public String getBrand() {
@@ -57,12 +62,12 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
     }
 
-    public CarMechanic getMechanic() {
-        return mechanic;
+    public List<Mechanic> getMechanics() {
+        return mechanics;
     }
 
-    public void setMechanic(CarMechanic mechanic) {
-        this.mechanic = mechanic;
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
     }
 
     @Override
@@ -80,7 +85,8 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract void printType(Transport<?> transport);
 
-    public  void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
+    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
         System.out.println("Проверка прохождения диагностики");
     }
+
 }

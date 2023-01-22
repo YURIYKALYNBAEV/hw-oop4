@@ -1,14 +1,18 @@
-package transport;
+package transport.truck;
 
-public class Truck extends Transport<DriverC>{
-    public TruckTypeLoadCapacity truckTypeLoadCapacity;
+import transport.exception.MissingDriverLicenseException;
+import transport.Transport;
+import transport.driver.DriverC;
+
+public class Truck extends Transport<DriverC> {
+    private TruckTypeLoadCapacity truckTypeLoadCapacity;
+
     public Truck(String brand,
                  String model,
                  double engineVolume,
                  DriverC driver,
-                 TruckTypeLoadCapacity truckTypeLoadCapacity,
-                 CarMechanic mechanic) {
-        super(brand, model, engineVolume, driver,mechanic);
+                 TruckTypeLoadCapacity truckTypeLoadCapacity) {
+        super(brand, model, engineVolume, driver);
         setTruckTypeLoadCapacity(truckTypeLoadCapacity);
     }
 
@@ -29,10 +33,12 @@ public class Truck extends Transport<DriverC>{
     public void finishMoving() {
         System.out.println("Грузовик марки" + getBrand() + "закончил движение");
     }
+
     @Override
     public void PitStop() {
         System.out.println("Пит-стоп у грузовика");
     }
+
     @Override
     public void BestLapTime() {
         int minBound = 90;
@@ -59,7 +65,7 @@ public class Truck extends Transport<DriverC>{
     }
 
     @Override
-    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException{
+    public void passDiagnostics(Transport<?> transport) throws MissingDriverLicenseException {
         if (getDriver().isHasDriverLicense()) {
             System.out.println(getBrand() + " " +
                     getModel() + " " +

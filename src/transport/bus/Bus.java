@@ -1,15 +1,17 @@
-package transport;
+package transport.bus;
+
+import transport.driver.DriverD;
+import transport.Transport;
 
 public class Bus extends Transport<DriverD> {
-    public BusTypeOfSeats busTypeOfSeats;
+    private BusTypeOfSeats busTypeOfSeats;
 
     public Bus(String brand,
                String model,
                double engineVolume,
                DriverD driver,
-               BusTypeOfSeats busTypeOfSeats,
-               CarMechanic mechanic) {
-        super(brand, model, engineVolume, driver, mechanic);
+               BusTypeOfSeats busTypeOfSeats) {
+        super(brand, model, engineVolume, driver);
         setBusTypeOfSeats(busTypeOfSeats);
     }
 

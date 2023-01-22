@@ -1,16 +1,18 @@
-package transport;
+package transport.car;
 
+import transport.driver.DriverB;
+import transport.exception.MissingDriverLicenseException;
+import transport.Transport;
 
 public class PassengerCar extends Transport<DriverB> {
-    public CarBodyType carBodyType;
+    private CarBodyType carBodyType;
 
     public PassengerCar(String brand,
                         String model,
                         double engineVolume,
                         DriverB driver,
-                        CarBodyType carBodyType,
-                        CarMechanic mechanic) {
-        super(brand, model, engineVolume, driver, mechanic);
+                        CarBodyType carBodyType) {
+        super(brand, model, engineVolume, driver);
         setCarBodyType(carBodyType);
     }
 

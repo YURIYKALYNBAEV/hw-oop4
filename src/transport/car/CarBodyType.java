@@ -1,4 +1,4 @@
-package transport;
+package transport.car;
 
 public enum CarBodyType {
     BODY_TYPE1("Седан"),

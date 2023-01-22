@@ -1,4 +1,4 @@
-package transport;
+package transport.truck;
 
 public enum TruckTypeLoadCapacity {
     CAPACITY_TYPE1(0, 3.5f),

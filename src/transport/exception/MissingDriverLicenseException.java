@@ -1,4 +1,4 @@
-package transport;
+package transport.exception;
 
 public class MissingDriverLicenseException extends Exception {
 

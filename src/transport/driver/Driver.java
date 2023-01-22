@@ -1,4 +1,4 @@
-package transport;
+package transport.driver;
 
 public abstract class Driver {
     private String name;
@@ -42,6 +42,11 @@ public abstract class Driver {
     public abstract void finishMove();
 
     public abstract void refuel();
+
+    @Override
+    public String toString() {
+        return "Водитель " + name;
+    }
 }
 
 

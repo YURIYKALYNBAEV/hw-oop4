@@ -1,4 +1,4 @@
-package transport;
+package transport.bus;
 
 public enum BusTypeOfSeats {
     BUS_TYPE_OF_SEATS1(0, 10) {
