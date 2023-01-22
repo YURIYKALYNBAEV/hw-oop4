@@ -74,6 +74,7 @@ public class Main {
         Mechanic mechanic6 = new Mechanic("Иван6", "Иванов6", "Лада-Сервис6", TypeTransport.BUS);
         Mechanic mechanic7 = new Mechanic("Иван7", "Иванов7", "Лада-Сервис7", TypeTransport.ALL);
 
+        // повтор
         bmw.addMechanic(mechanic1);
         bmw.addMechanic(mechanic1);
         bmw.addMechanic(mechanic2);
@@ -92,9 +93,7 @@ public class Main {
         carsList.add(kavz4270);
 
         for (Transport<?> transport : carsList) {
-            System.out.println(transport + " " +
-                    transport.getDriver() +
-                    " " + transport.getMechanics());
+            System.out.println(transport + " " + transport.getMechanics());
         }
     }
 

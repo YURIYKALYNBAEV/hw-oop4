@@ -5,7 +5,9 @@ import transport.exception.MissingDriverLicenseException;
 import transport.mechanic.Mechanic;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport<T extends Driver> implements Competing {
     public static final String DEFAULT_VALUE = "default";
@@ -14,7 +16,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String model;
     private double engineVolume;
     private T driver;
-    private final List<Mechanic> mechanics = new ArrayList<>();
+    private final Set<Mechanic> mechanics = new HashSet<>();
 
     public Transport(String brand,
                      String model,
@@ -62,7 +64,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.driver = driver;
     }
 
-    public List<Mechanic> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
 
