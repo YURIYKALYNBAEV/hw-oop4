@@ -59,10 +59,22 @@ public class Main {
         // Коллекции. Списки
 
         //водители
-        List<Driver> drivers = new ArrayList<>();
+//        List<Driver> drivers = new ArrayList<>();
+        Set<Driver> drivers = new HashSet<>();
+
+        drivers.add(driverB);
         drivers.add(driverB);
         drivers.add(driverC);
+        drivers.add(driverC);
         drivers.add(driverD);
+        drivers.add(driverD);
+        drivers.add(driverD);
+
+        for (Driver driver : drivers) {
+            System.out.println(driver);
+        }
+
+        System.out.println();
 
         //механики
         Mechanic mechanic1 = new Mechanic("Иван1", "Иванов1", "Лада-Сервис1", TypeTransport.CAR);
