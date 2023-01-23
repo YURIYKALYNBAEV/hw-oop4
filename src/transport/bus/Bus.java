@@ -34,12 +34,12 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public void PitStop() {
+    public void pitStop() {
         System.out.println("Пит-стоп у автобуса");
     }
 
     @Override
-    public void BestLapTime() {
+    public void bestLapTime() {
         int minBound = 90;
         int maxBound = 150;
         int bestLapTime = (int) ((int) (maxBound - minBound) * Math.random());
@@ -47,7 +47,7 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public void MaximumSpeed() {
+    public void maximumSpeed() {
         int minBound = 70;
         int maxBound = 120;
         int maximumSpeed = (int) ((int) (maxBound - minBound) * Math.random());
