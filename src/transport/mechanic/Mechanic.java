@@ -1,5 +1,7 @@
 package transport.mechanic;
 
+import java.util.Objects;
+
 public class Mechanic {
     private String name;
     private String surname;
@@ -46,6 +48,19 @@ public class Mechanic {
 
     public void setTypeTransport(TypeTransport typeTransport) {
         this.typeTransport = typeTransport;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic mechanic = (Mechanic) o;
+        return name.equals(mechanic.name) && surname.equals(mechanic.surname) && company.equals(mechanic.company) && typeTransport == mechanic.typeTransport;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, company, typeTransport);
     }
 
     @Override

@@ -79,6 +79,23 @@ public abstract class Transport<T extends Driver> implements Competing {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return brand.equals(transport.brand)
+                && model.equals(transport.model)
+                && Double.compare(transport.engineVolume, engineVolume) == 0
+                && driver.equals(transport.driver)
+                && mechanics.equals(transport.mechanics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, driver, mechanics);
+    }
+
     public abstract void startMoving();
 
     public abstract void finishMoving();
