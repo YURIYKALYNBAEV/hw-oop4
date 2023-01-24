@@ -26,6 +26,15 @@ public class Main {
                 "Иван",
                 true,
                 5);
+        DriverB driverB1 = new DriverB(
+                "Иван",
+                true,
+                5);
+        DriverB driverB2 = new DriverB(
+                "Иван",
+                true,
+                5);
+
 
         PassengerCar bmw = new PassengerCar(
                 "BMW",
@@ -38,7 +47,10 @@ public class Main {
                 "Борис",
                 true,
                 8);
-
+        DriverC driverC1 = new DriverC(
+                "Борис",
+                true,
+                8);
         Truck kamaz5311 = new Truck("KAMAZ",
                 "5311",
                 3.3,
@@ -49,7 +61,10 @@ public class Main {
                 "Василий",
                 true,
                 10);
-
+        DriverD driverD1 = new DriverD(
+                "Василий",
+                true,
+                10);
         Bus kavz4270 = new Bus("КАВЗ",
                 "КАВЗ-4270",
                 3.0,
@@ -63,12 +78,14 @@ public class Main {
         Set<Driver> drivers = new HashSet<>();
 
         drivers.add(driverB);
-        drivers.add(driverB);
+        drivers.add(driverB1);
+        drivers.add(driverB2);
+
         drivers.add(driverC);
-        drivers.add(driverC);
+        drivers.add(driverC1);
+
         drivers.add(driverD);
-        drivers.add(driverD);
-        drivers.add(driverD);
+        drivers.add(driverD1);
 
         for (Driver driver : drivers) {
             System.out.println(driver);
@@ -78,7 +95,9 @@ public class Main {
 
         //механики
         Mechanic mechanic1 = new Mechanic("Иван1", "Иванов1", "Лада-Сервис1", TypeTransport.CAR);
+        Mechanic mechanic8 = new Mechanic("Иван1", "Иванов1", "Лада-Сервис1", TypeTransport.CAR);
         Mechanic mechanic2 = new Mechanic("Иван2", "Иванов2", "Лада-Сервис2", TypeTransport.CAR);
+        Mechanic mechanic9 = new Mechanic("Иван2", "Иванов2", "Лада-Сервис2", TypeTransport.CAR);
         Mechanic mechanic3 = new Mechanic("Иван3", "Иванов3", "Лада-Сервис3", TypeTransport.TRUCK);
         Mechanic mechanic4 = new Mechanic("Иван4", "Иванов4", "Лада-Сервис4", TypeTransport.TRUCK);
         Mechanic mechanic5 = new Mechanic("Иван5", "Иванов5", "Лада-Сервис5", TypeTransport.TRUCK);
@@ -87,8 +106,9 @@ public class Main {
 
         // повтор
         bmw.addMechanic(mechanic1);
-        bmw.addMechanic(mechanic1);
         bmw.addMechanic(mechanic2);
+        bmw.addMechanic(mechanic8);
+        bmw.addMechanic(mechanic9);
 
         kamaz5311.addMechanic(mechanic3);
         kamaz5311.addMechanic(mechanic4);
