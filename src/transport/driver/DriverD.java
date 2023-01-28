@@ -1,9 +1,10 @@
-package transport;
+package transport.driver;
 
 public class DriverD extends Driver {
     public DriverD(String name, boolean hasDriverLicense, int experienceInYears) {
         super(name, hasDriverLicense, experienceInYears);
     }
+
     @Override
     public void startMove() {
         System.out.println("Водитель категории Д " + getName() + " начал движение");

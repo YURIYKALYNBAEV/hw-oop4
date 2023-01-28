@@ -1,9 +1,9 @@
 package transport;
 
 public interface Competing {
+    void pitStop();
 
+    void bestLapTime();
 
-    void PitStop();
-    void BestLapTime();
-    void MaximumSpeed();
+    void maximumSpeed();
 }
