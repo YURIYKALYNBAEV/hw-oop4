@@ -15,6 +15,8 @@ import transport.truck.TruckTypeLoadCapacity;
 
 import java.util.*;
 
+import static java.sql.DriverManager.drivers;
+
 public class Main {
     public static void main(String[] args) {
         task();
@@ -89,6 +91,11 @@ public class Main {
 
         for (Driver driver : drivers) {
             System.out.println(driver);
+        }
+        System.out.println();
+        Iterator<Driver> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
         }
 
         System.out.println();
